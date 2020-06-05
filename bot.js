@@ -1,9 +1,11 @@
 "use strict"
 let twitter = require('./twitter');
 let defaults = require('./defaults.json');
+let Twit = require('twit');
+let sec = require('./sec');
 const commandLineArgs = require('command-line-args')
 const optionDefinitions = [
-	{name: 'rtDrops', alias: 'r', type: Boolean, defaultOption: true},
+	{name: 'rtDrops', alias: 'r', type: Boolean},
 	{name: 'timeline', alias: 't', type: Boolean},
 	{name: 'username', alias: 'u', type: String}
 ]
@@ -35,7 +37,7 @@ try
 	}
 	if(defaults.runOnStart)
 	{
-		fun();
+		fun(client);
 	}
 }
 catch (error)

@@ -9,7 +9,7 @@ exports.rtDrops = async function (client)
 	let params =
 	{
 		q: query,
-		count: defaults.tweetsNumbers,
+		count: 100,
 		result_type: "recent"
 	}
 	client.get('search/tweets', params, function (error, tweets, response)
@@ -25,7 +25,7 @@ exports.rtDrops = async function (client)
 			return -2;
 		}
 		console.log(tweets);
-		tweets.forEach(async (element) =>
+		tweets.statuses.forEach(async (element) =>
 		{
 			element.text = element.text.toLowerCase();
 			if (!history[ element.user.screen_name ])
