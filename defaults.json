@@ -1,0 +1,11 @@
+{
+	"useExpress": true,
+	"port": 5000,
+	"useCron": true,
+	"tweetsNumbers": 1000,
+	"cronEveryMin": 20,
+	"cronEveryHour": 1,
+	"botRunChance": 2,
+	"runOnStart": true,
+	"herokoAppAddress": ""
+}

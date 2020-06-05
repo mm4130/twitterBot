@@ -1,0 +1,24 @@
+{
+	"name": "thebot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "bot.js",
+	"scripts": {
+		"start": "bot.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "noOne",
+	"license": "MIT",
+	"dependencies": {
+		"colors": "^1.4.0",
+		"command-line-args": "^5.1.1",
+		"cron": "^1.8.2",
+		"date-and-time": "^0.10.0",
+		"delay": "^4.3.0",
+		"express": "latest",
+		"random": "^2.2.0",
+		"sleep": "^6.1.0",
+		"twit": "^2.2.11",
+		"twitter": "^1.7.1"
+	}
+}
