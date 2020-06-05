@@ -3,7 +3,7 @@ let delay = require('delay');
 let common = require('./methods/common');
 let history = require(`./history.json`);
 
-exports.rtDrops = async function (client, cbf)
+exports.rtDrops = async function (client)
 {
 	const query = '@cctip_io OR @coinkit_';
 	let params =
@@ -245,4 +245,3 @@ exports.timeline = async function (client)
 	});
 
 }
-exports.timeline();

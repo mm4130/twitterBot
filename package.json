@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "bot.js",
 	"scripts": {
-		"start": "bot.js",
+		"start": "bot.js -r -u mforgood",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "noOne",
