@@ -35,6 +35,7 @@ exports.rtDrops = async function (client)
 			if (
 				(element.in_reply_to_status_id == null && element.in_reply_to_user_id == null)
 				&& (history[ element.user.screen_name ].indexOf(element.id_str) == -1 && history[ element.user.screen_name ].indexOf(element.id.toString()) == -1)
+				&& (element.text.indexOf('@cctip_io tip') == -1)
 			)
 			{
 				// console.log('found one', element);
