@@ -9,7 +9,7 @@ exports.rtDrops = async function (client)
 	let params =
 	{
 		q: query,
-		count: 100,
+		count: 30,
 		result_type: "recent"
 	}
 	client.get('search/tweets', params, function (error, tweets, response)
