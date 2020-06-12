@@ -9,7 +9,7 @@ exports.rtDrops = async function (client)
 	let params =
 	{
 		q: query,
-		count: 30,
+		count: 70,
 		result_type: "recent"
 	}
 	client.get('search/tweets', params, function (error, tweets, response)
@@ -37,6 +37,8 @@ exports.rtDrops = async function (client)
 				&& (history[ element.user.screen_name ].indexOf(element.id_str) == -1 && history[ element.user.screen_name ].indexOf(element.id.toString()) == -1)
 				&& (element.text.indexOf('@cctip_io tip') == -1)
 				&& (element.text.indexOf('@coinkit_ tip') == -1)
+				&& (element.text.indexOf('@coinkit_ give') == -1)
+				&& (element.text.indexOf('@coinkit_ give') == -1)
 			)
 			{
 				// console.log('found one', element);
@@ -67,40 +69,7 @@ exports.rtDrops = async function (client)
 						{
 							console.log(err);
 						}
-						client.post('friendships/create',
-						{
-							user_id: element.user.id_str
-						},
-						async function (err, data, response)
-						{
-							if (err)
-							{
-								console.log('user friendships/create', err);
-							}
-							let followDone = 0;
-							for (let index = 0;index < element.entities.user_mentions.length;index++)
-							{
-								client.post('friendships/create',
-								{
-									// screen_name: element.entities.user_mentions[index].screen_name,
-									user_id: element.entities.user_mentions[ index ].id_str
-									// follow: true
-								},
-								async function (err, data, response)
-								{
-									if (err)
-									{
-										console.log('friendships/create', err);
-									}
-									followDone++;
-									if (followDone == element.entities.user_mentions.length)
-									{
-										////
-									}
-								});
-							}
-							await common.UpdateHistory(history, './history_mforgoodt.json');
-						});
+						await common.UpdateHistory(history, './history_mforgoodt.json');
 					});
 				});
 				await delay(2000);

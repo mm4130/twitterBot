@@ -5,7 +5,7 @@
 	"tweetsNumbers": 1000,
 	"cronEveryMin": 7,
 	"cronEveryHour": 1,
-	"botRunChance": 2,
+	"botRunChance": 10,
 	"runOnStart": true,
 	"herokoAppAddress": ""
 }
